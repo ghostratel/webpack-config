@@ -59,7 +59,4 @@ typings/
 
 # other
 package-lock.json
-<<<<<<< HEAD
-=======
-
->>>>>>> a8003b196dfb163ad5e277f8a5555a96909a1f01
+dist/
