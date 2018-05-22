@@ -50,7 +50,7 @@ module.exports = {
   ],
   module: {
     rules: [{
-      test: /\.scss$/,
+      test: /\.(css|scss)$/,
       use: ExtractTextWebpackPlugin.extract({
         use: [{
           loader: 'css-loader',
