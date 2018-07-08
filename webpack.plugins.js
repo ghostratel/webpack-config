@@ -24,7 +24,7 @@ module.exports = [
     to: './pulic'
   }]),
   // 分离css插件参数为提取出去的路径
-  new ExtractTextPlugin('css/index.css'),
+  new ExtractTextPlugin('css/[name].css'),
   // 消除冗余的css代码
   new PurifyCssWebpack({
     // glob为扫描模块，使用其同步方法
