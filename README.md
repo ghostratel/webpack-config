@@ -1,3 +1,3 @@
 # webpack-config
 
-## 自用webpack
+## 基于webpack4的多页面应用配置
