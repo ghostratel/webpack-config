@@ -19,10 +19,10 @@ module.exports = [
   new CleanWebpackPlugin(['dist']),
   // 4.x之前可用uglifyjs-webpack-plugin用以压缩文件，4.x可用--mode更改模式为production来压缩文件
   // new uglifyjsWebpackPlugin(),
-  new CopyWebpackPlugin([{
-    from: path.resolve(__dirname, 'src/assets'),
-    to: './pulic'
-  }]),
+  // new CopyWebpackPlugin([{
+  //   from: path.resolve(__dirname, 'src/assets'),
+  //   to: './pulic'
+  // }]),
   // 分离css插件参数为提取出去的路径
   new ExtractTextPlugin('css/[name].css'),
   // 消除冗余的css代码
