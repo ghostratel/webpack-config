@@ -1,2 +1,3 @@
 import './index.scss'
-console.log('-------11111111111111111111--------------')
+import image from './assets/image.png'
+console.log(image)
