@@ -12,7 +12,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 // 分离css
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 // 静态资源输出
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+// const CopyWebpackPlugin = require('copy-webpack-plugin')
 module.exports = [
   new webpack.HotModuleReplacementPlugin(),
   // 调用之前先清除
