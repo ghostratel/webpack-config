@@ -1,14 +1,12 @@
 {
   "name": "webpack-seed",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "",
-  "private": true,
+  "main": "index.js",
   "scripts": {
-    "build": "npx webpack --config webpack.prod.js",
-    "watch": "npx webpack --watch",
-    "dev": "npx webpack --open --config webpack.dev.js"
+    "dev": "npx webpack --config webpack.config.js"
   },
-  "repository": {s
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/ghostratel/webpack-seed.git"
   },
@@ -19,18 +17,10 @@
     "url": "https://github.com/ghostratel/webpack-seed/issues"
   },
   "homepage": "https://github.com/ghostratel/webpack-seed#readme",
-  "devDependencies": {
-    "clean-webpack-plugin": "^1.0.1",
-    "css-loader": "^2.1.0",
-    "file-loader": "^3.0.1",
-    "html-webpack-plugin": "^3.2.0",
-    "style-loader": "^0.23.1",
-    "webpack": "^4.29.5",
-    "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.2.0",
-    "webpack-merge": "^4.2.1"
-  },
   "dependencies": {
-    "lodash": "^4.17.11"
+    "webpack": "^4.29.6"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.0"
   }
 }
