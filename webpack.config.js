@@ -1,6 +1,9 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require('path')
+const glob = require('glob');
+const PurifyCSSPlugin = require('purifycss-webpack');
 module.exports = {
 	mode: 'development',
 	entry: {
@@ -60,11 +63,14 @@ module.exports = {
 		]
   },
   plugins:[
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].[hash:5].css'
-    })
+    }),
+    new PurifyCSSPlugin({
+      paths: glob.sync(path.join(__dirname, 'dist/*.html'))
+    }),
+    new HtmlWebpackPlugin(),
+    new CleanWebpackPlugin()
   ],
   optimization: {
     splitChunks: {
