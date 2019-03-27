@@ -1,5 +1,6 @@
-const CleanWebpackPlugin = require('clean-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
 	mode: 'development',
 	entry: {
@@ -20,12 +21,50 @@ module.exports = {
 					}
 				},
 				exclude: /(node_modules)/
-			}
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader
+          },
+          {
+            loader: 'css-loader'
+          }
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              ident: 'postcss',
+              plugins:[
+                require('postcss-preset-env')(),
+                require('cssnano')()
+              ]
+            }
+          },
+          {
+            loader: 'sass-loader'
+          }
+        ]
+      }
 		]
   },
   plugins:[
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: '[name].[hash:5].css'
+    })
   ],
   optimization: {
     splitChunks: {

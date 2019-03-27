@@ -1,5 +1,7 @@
 import a from './pageA'
 
+import './css/base.css'
+import './css/common.scss'
 
 import * as _ from 'lodash'
 import $ from 'jquery'
