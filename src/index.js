@@ -1,7 +1,8 @@
-import func from './click.js'
-import './index.scss'
+import axios from 'axios'
 
-import $ from 'jquery'
-func()
-
-console.log($.each)
+axios.get('/react/api/header.json').then(res => {
+  console.log(res)
+})
+axios.get('/react/api/demo.json').then(res => {
+  console.log(res)
+})
