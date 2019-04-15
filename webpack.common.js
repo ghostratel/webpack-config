@@ -2,7 +2,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 module.exports = {
   entry: {
-    bundle: './src/index.js'
+    index: './src/index.js',
+    list: './src/list.js'
   },
   output: {
     filename: '[name]_[hash:5].js',
@@ -53,7 +54,14 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './src/index.html'
+      template: './src/index.html',
+      filename: 'index.html',
+      chunks: ['index']
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/list.html',
+      filename: 'list.html',
+      chunks: ['list']
     }),
     new CleanWebpackPlugin()
   ]
