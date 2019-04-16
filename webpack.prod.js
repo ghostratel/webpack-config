@@ -8,7 +8,7 @@ const prodConf = {
   module: {
     rules: [
       {
-        test: /(?<!module)\.(scss|css)$/,
+        test: /\.(scss|css)$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
