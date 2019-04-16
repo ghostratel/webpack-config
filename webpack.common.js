@@ -1,10 +1,8 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const { HTMLWebpackPlugins, entry } = require('./_build/genMultiEntry.js')
 module.exports = {
-  entry: {
-    index: './src/index.js',
-    list: './src/list.js'
-  },
+  entry: entry,
   output: {
     filename: '[name]_[hash:5].js',
     chunkFilename: '[name]_[contenthash:5].js'
@@ -53,16 +51,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-      filename: 'index.html',
-      chunks: ['index']
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/list.html',
-      filename: 'list.html',
-      chunks: ['list']
-    }),
+    ...HTMLWebpackPlugins,
     new CleanWebpackPlugin()
   ]
 }
