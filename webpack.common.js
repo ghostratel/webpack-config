@@ -9,7 +9,14 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
-      chunks: 'all'
+      chunks: 'all',
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+          name: 'commons'
+        }
+      }
     }
   },
   module: {

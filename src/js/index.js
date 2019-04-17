@@ -1,3 +1,9 @@
-console.log('this is index')
+import _ from 'lodash'
 
-alert(666)
+console.log(_.join(['index']))
+
+setTimeout(() => {
+  import('./mod').then(({ default: a }) => {
+    console.log(a)
+  })
+}, 3000)

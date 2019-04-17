@@ -1,6 +1,7 @@
 const merge = require('webpack-merge')
 const commonConf = require('./webpack.common.js')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const TerserJSPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const prodConf = {
   mode: 'production',
@@ -43,6 +44,9 @@ const prodConf = {
   ],
   optimization: {
     minimizer: [
+      new TerserJSPlugin({
+        sourceMap: true
+      }),
       new OptimizeCSSAssetsPlugin({})
     ]
   }

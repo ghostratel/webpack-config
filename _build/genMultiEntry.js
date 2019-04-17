@@ -18,7 +18,7 @@ const genHtmlWebpackPlugin = (files) => {
     return new HtmlWebpackPlugin({
       template: path.join(pagesPath, fileName),
       filename: fileName,
-      chunks: [chunkName]
+      chunks: ['commons', chunkName]
     })
   })
 }
