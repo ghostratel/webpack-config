@@ -1,3 +1,3 @@
-const { HTMLWebpackPlugins, entry } = require('./_build/genEntry.js')
+const fs = require('fs')
 
-console.log(HTMLWebpackPlugins, entry)
+console.log(fs.existsSync('./aaaa.js'))

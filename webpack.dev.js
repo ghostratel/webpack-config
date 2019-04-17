@@ -11,7 +11,6 @@ const devConf = {
     hot: true,
     overlay: true,
     proxy: {
-      '/react': 'http://www.dell-lee.com'
     }
   },
   module: {
