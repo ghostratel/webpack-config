@@ -41,6 +41,15 @@ module.exports = {
         ]
       },
       {
+        test: /\.html$/,
+        use: {
+          loader: 'html-loader',
+          options: {
+            attrs: [':src']
+          }
+        }
+      },
+      {
         test: /\.(svg|jpe?g|gif|png|bmp)$/,
         use: {
           loader: 'url-loader',
