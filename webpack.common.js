@@ -1,11 +1,17 @@
 
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const { HTMLWebpackPlugins, entry } = require('./_build/genMultiEntry.js')
+const path = require('path')
 module.exports = {
   entry: entry,
   output: {
     filename: '[name]_[hash:5].js',
     chunkFilename: '[name]_[contenthash:5].js'
+  },
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src')
+    }
   },
   optimization: {
     splitChunks: {
