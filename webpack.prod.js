@@ -40,7 +40,10 @@ const prodConf = {
     ]
   },
   plugins: [
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin({
+      filename: 'css/[name]_[hash:5].css',
+      chunkFilename: 'css/[id]_[hash:5].css'
+    })
   ],
   optimization: {
     minimizer: [
