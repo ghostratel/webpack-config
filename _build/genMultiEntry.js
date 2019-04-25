@@ -5,7 +5,6 @@ const mkFile = require('./mkFile.js')
 const pagesPath = path.resolve(__dirname, '../src/pages')
 const entryPath = path.resolve(__dirname, '../src/js')
 const pagesFiles = fs.readdirSync(pagesPath, 'utf-8')
-const entriesFiles = fs.readdirSync(entryPath, 'utf-8')
 const matchNameReg = /\w+(?=\.)/
 
 const genHtmlWebpackPlugin = (files) => {
@@ -27,10 +26,10 @@ const genEntry = (entries) => {
   let entry = {}
   entries.forEach(entryName => {
     let _name = entryName.match(matchNameReg)[0]
-    entry[_name] = path.join(entryPath, entryName)
+    entry[_name] = path.join(entryPath, _name + '.js')
   })
   return entry
 }
 
 module.exports.HTMLWebpackPlugins = genHtmlWebpackPlugin(pagesFiles)
-module.exports.entry = genEntry(entriesFiles)
+module.exports.entry = genEntry(pagesFiles)
