@@ -1,6 +1,6 @@
 
-const CleanWebpackPlugin = require('clean-webpack-plugin')
 const { HTMLWebpackPlugins, entry } = require('./_build/genMultiEntry.js')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const path = require('path')
 module.exports = {
   entry: entry,
@@ -41,6 +41,10 @@ module.exports = {
         ]
       },
       {
+        test: /\.vue$/,
+        loader: 'vue-loader'
+      },
+      {
         test: /\.html$/,
         use: {
           loader: 'html-loader',
@@ -74,6 +78,6 @@ module.exports = {
   },
   plugins: [
     ...HTMLWebpackPlugins,
-    new CleanWebpackPlugin()
+    new VueLoaderPlugin()
   ]
 }

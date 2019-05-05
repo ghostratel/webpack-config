@@ -6963,3 +6963,5 @@ let a = `
     于是他爆喝道：“都给我过来，我花钱是让你们来采访我的。”`
 
 export default a
+
+export const b = 2

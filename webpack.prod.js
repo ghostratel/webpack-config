@@ -3,6 +3,7 @@ const commonConf = require('./webpack.common.js')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const TerserJSPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const prodConf = {
   mode: 'production',
   devtool: 'cheap-module-source-map',
@@ -43,7 +44,8 @@ const prodConf = {
     new MiniCssExtractPlugin({
       filename: 'css/[name]_[contenthash:5].css',
       chunkFilename: 'css/[id]_[contenthash:5].css'
-    })
+    }),
+    new CleanWebpackPlugin()
   ],
   optimization: {
     minimizer: [
