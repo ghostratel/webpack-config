@@ -5,6 +5,9 @@
 </template>
 
 <script>
+import('../js/asyncMod').then(({default: a}) => {
+  console.error('async', a)
+})
 export default {
   data: () => ({
     msg: 'hello world!!!' 

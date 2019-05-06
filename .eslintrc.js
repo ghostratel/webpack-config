@@ -13,6 +13,7 @@ module.exports = {
         'SharedArrayBuffer': 'readonly'
     },
     'parserOptions': {
+        'parser': 'babel-eslint',
         'ecmaVersion': 2018,
         'sourceType': 'module'
     },
@@ -35,6 +36,7 @@ module.exports = {
         'semi': [
             'error',
             'never'
-        ]
+        ],
+        'no-console': 'off'
     }
 }
