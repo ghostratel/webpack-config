@@ -5,8 +5,8 @@
 	"sideEffects": [
 		"@babel/polyfill",
 		"*.css",
-    "*.scss",
-    "*.vue"
+		"*.scss",
+		"*.vue"
 	],
 	"scripts": {
 		"bundle": "webpack --config webpack.dev.js",
@@ -30,9 +30,9 @@
 		"webpack-cli": "^3.3.0"
 	},
 	"devDependencies": {
-    "core-js": "^3.0.0",
-    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "babel-eslint": "^10.0.1",
+		"core-js": "^3.0.0",
+		"@babel/plugin-syntax-dynamic-import": "^7.2.0",
+		"babel-eslint": "^10.0.1",
 		"@babel/core": "^7.4.3",
 		"@babel/preset-env": "^7.4.3",
 		"autoprefixer": "^9.5.0",

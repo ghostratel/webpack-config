@@ -6,7 +6,7 @@
 
 <script>
 import('../js/asyncMod').then(({default: a}) => {
-  console.error('async', a)
+  console.log('async', a)
 })
 export default {
   data: () => ({
