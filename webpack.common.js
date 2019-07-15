@@ -9,6 +9,7 @@ module.exports = {
     chunkFilename: 'js/[name]_[contenthash:5].js'
   },
   resolve: {
+    extensions: ['.js', '.vue'],
     alias: {
       '@': path.resolve(__dirname, 'src')
     }
