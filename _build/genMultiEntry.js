@@ -1,19 +1,18 @@
 const fs = require('fs')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const mkFile = require('./mkFile.js')
 const pagesPath = path.resolve(__dirname, '../src/pages')
 const entryPath = path.resolve(__dirname, '../src/entries')
 const pagesFiles = fs.readdirSync(pagesPath, 'utf-8')
 const matchNameReg = /\w+(?=\.)/
 
+const mkFile = path => {
+  return fs.closeSync(fs.openSync(path, 'w'))
+}
+
 const genHtmlWebpackPlugin = (files) => {
   return files.map(fileName => {
     const chunkName = fileName.match(matchNameReg)[0]
-    const entryFilePath = path.join(entryPath, chunkName + '.js')
-    if (!fs.existsSync(entryFilePath)) {
-      mkFile(path.join(entryFilePath))
-    }
     return new HtmlWebpackPlugin({
       template: path.join(pagesPath, fileName),
       filename: fileName,
@@ -26,7 +25,15 @@ const genEntry = (entries) => {
   let entry = {}
   entries.forEach(entryName => {
     let _name = entryName.match(matchNameReg)[0]
-    entry[_name] = path.join(entryPath, _name + '.js')
+    const matchReg = new RegExp('^' + _name + '\.js$')
+    const entryFile = fs.readdirSync(entryPath).find(f => matchReg.test(f))
+    if(entryFile) {
+      entry[_name] = path.join(entryPath, entryFile)
+    } else {
+      const defaultPath = path.join(entryPath, _name + '.js')
+      mkFile(defaultPath)
+      entry[_name] = defaultPath
+    }
   })
   return entry
 }
