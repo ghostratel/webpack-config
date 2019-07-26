@@ -16,7 +16,7 @@ const genHtmlWebpackPlugin = (files) => {
     return new HtmlWebpackPlugin({
       template: path.join(pagesPath, fileName),
       filename: fileName,
-      chunks: ['commons', chunkName]
+      chunks: ['vendors', 'commons', chunkName]
     })
   })
 }
@@ -25,7 +25,7 @@ const genEntry = (entries) => {
   let entry = {}
   entries.forEach(entryName => {
     let _name = entryName.match(matchNameReg)[0]
-    const matchReg = new RegExp('^' + _name + '\.js$')
+    const matchReg = new RegExp('^' + _name + '.js$')
     const entryFile = fs.readdirSync(entryPath).find(f => matchReg.test(f))
     if(entryFile) {
       entry[_name] = path.join(entryPath, entryFile)

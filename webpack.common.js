@@ -9,7 +9,7 @@ module.exports = {
     chunkFilename: 'js/[name]_[contenthash:5].js'
   },
   resolve: {
-    extensions: ['.js', '.vue'],
+    extensions:['.js', '.vue'],
     alias: {
       '@': path.resolve(__dirname, 'src')
     }
@@ -18,10 +18,15 @@ module.exports = {
     splitChunks: {
       chunks: 'all',
       cacheGroups: {
-        commons: {
+        vendors: {
           test: /[\\/]node_modules[\\/]/,
           priority: -10,
-          name: 'commons'
+          name: 'vendors'
+        },
+        commons: {
+          name: 'commons',
+          chunks: 'initial',
+          minChunks: 2
         }
       }
     }
@@ -30,7 +35,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: /node_modules|dwudbproxy\.js/,
         use: [
           'babel-loader',
           {
