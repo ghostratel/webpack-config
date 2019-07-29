@@ -26,7 +26,6 @@
 	"homepage": "https://github.com/ghostratel/webpack-seed#readme",
 	"dependencies": {
 		"@babel/polyfill": "^7.4.3",
-		"vue": "^2.6.10",
 		"webpack-cli": "^3.3.0"
 	},
 	"devDependencies": {
