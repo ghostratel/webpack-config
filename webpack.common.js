@@ -35,7 +35,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /node_modules|dwudbproxy\.js/,
+        exclude: /node_modules/,
         use: [
           'babel-loader',
           {
