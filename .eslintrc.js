@@ -6,7 +6,8 @@ module.exports = {
     },
     'extends': [
         'eslint:recommended',
-        'plugin:vue/essential'
+        'plugin:vue/essential',
+        "plugin:react/recommended"
     ],
     'globals': {
         'Atomics': 'readonly',
@@ -16,6 +17,11 @@ module.exports = {
         'parser': 'babel-eslint',
         'ecmaVersion': 2018,
         'sourceType': 'module'
+    },
+    'settings': {
+        "react": {
+            "version": "detect"
+        }
     },
     'plugins': [
         'vue'

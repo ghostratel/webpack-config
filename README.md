@@ -9,6 +9,7 @@ A webpack4 workflow.
 * 智能的分包策略，优化代码打包体积。
 * Eslint 语法检查。
 * 支持Vue.js 2.x开发。
+* 支持React.js开发。
 * 支持多页应用开发。
 * Sass 编译。
 * Autoprefixer 浏览器厂商后缀自动补全。
