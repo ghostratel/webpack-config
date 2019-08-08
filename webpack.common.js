@@ -5,7 +5,6 @@ const path = require('path')
 module.exports = {
   entry: entry,
   output: {
-    filename: 'js/[name]_[hash:5].js',
     chunkFilename: 'js/[name]_[contenthash:5].js'
   },
   resolve: {

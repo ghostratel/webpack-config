@@ -7,6 +7,9 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const prodConf = {
   mode: 'production',
   devtool: 'cheap-module-source-map',
+  output: {
+    filename: 'js/[name]_[contenthash:5].js',
+  },
   module: {
     rules: [
       {
