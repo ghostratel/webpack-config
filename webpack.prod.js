@@ -1,3 +1,4 @@
+const webpack = require('webpack')
 const merge = require('webpack-merge')
 const commonConf = require('./webpack.common.js')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -48,7 +49,10 @@ const prodConf = {
       filename: 'css/[name]_[contenthash:5].css',
       chunkFilename: 'css/[id]_[contenthash:5].css'
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new webpack.DefinePlugin({
+      DEV: JSON.stringify(false)
+    })
   ],
   optimization: {
     minimizer: [

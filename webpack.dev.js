@@ -50,7 +50,10 @@ const devConf = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      DEV: JSON.stringify(true)
+    })
   ]
 }
 
