@@ -6,6 +6,7 @@ A webpack4 workflow.
 
 * Webpack 4.x 的 JS 模块编译，支持各类模块规范。
 * Babel 7 ES6语法编译。
+* 按需引入的ES6 polyfill。
 * 智能的分包策略，优化代码打包体积。
 * Eslint 语法检查。
 * 支持Vue.js 2.x开发。
