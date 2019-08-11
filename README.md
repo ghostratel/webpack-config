@@ -15,3 +15,17 @@ A webpack4 workflow.
 * Sass 编译。
 * Autoprefixer 浏览器厂商后缀自动补全。
 * 小图片转base64。
+
+## Feature
+
+* Webpack4.x based.
+* Babel 7 ES6 syntax compilation.
+* ES6 polyfill introduced as needed.
+* Intelligent subcontracting strategy to optimize code packaging volume.
+* Eslint syntax check.
+* Support Vue.js 2.x development。
+* Support React.js development。
+* Support for multi-page application development。
+* Sass compilation。
+* Autoprefixer browser vendor suffix auto completion。
+* Small picture to base64.
