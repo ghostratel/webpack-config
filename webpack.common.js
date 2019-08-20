@@ -8,26 +8,14 @@ module.exports = {
     chunkFilename: 'js/[name]_[contenthash:5].js'
   },
   resolve: {
-    extensions:['.js', '.vue', '.jsx'],
+    extensions: ['.js', '.vue', '.jsx'],
     alias: {
       '@': path.resolve(__dirname, 'src')
     }
   },
   optimization: {
     splitChunks: {
-      chunks: 'all',
-      cacheGroups: {
-        vendors: {
-          test: /[\\/]node_modules[\\/]/,
-          priority: -10,
-          name: 'vendors'
-        },
-        commons: {
-          name: 'commons',
-          chunks: 'initial',
-          minChunks: 2
-        }
-      }
+      chunks: 'all'
     }
   },
   module: {

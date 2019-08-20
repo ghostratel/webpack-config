@@ -11,8 +11,8 @@
 	"scripts": {
 		"bundle": "webpack --config webpack.dev.js",
 		"dev": "webpack-dev-server --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
-    "analyse": "webpack --config webpack.prod.js --env.analyse"
+		"build": "webpack --config webpack.prod.js",
+		"analyse": "webpack --config webpack.prod.js --env.analyse"
 	},
 	"repository": {
 		"type": "git",
@@ -30,6 +30,7 @@
 		"react": "^16.8.6",
 		"react-dom": "^16.8.6",
 		"vue": "^2.6.10",
+		"webpack-bundle-analyzer": "^3.4.1",
 		"webpack-cli": "^3.3.6"
 	},
 	"devDependencies": {
@@ -54,7 +55,7 @@
 		"eslint-plugin-vue": "^5.2.3",
 		"file-loader": "^4.1.0",
 		"html-loader": "^0.5.5",
-		"html-webpack-plugin": "^3.2.0",
+		"html-webpack-plugin": "^4.0.0-beta.8",
 		"mini-css-extract-plugin": "^0.8.0",
 		"node-sass": "^4.12.0",
 		"optimize-css-assets-webpack-plugin": "^5.0.3",
