@@ -7,7 +7,7 @@ class C extends Component {
 
     this.state = {
       counter: 0,
-      text: ''
+      text: commonModule
     }
   }
 
@@ -26,8 +26,7 @@ class C extends Component {
   componentDidMount(){
     setInterval(() => {
       this.setState({
-        counter: this.state.counter + 1,
-        text: commonModule
+        counter: this.state.counter + 1
       })
     }, 1000)
   }
