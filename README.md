@@ -1,6 +1,6 @@
 # webpack-seed
 
-A webpack4 workflow.
+Webpack4 based front-end workflow, out of the box.
 
 ## 功能
 
