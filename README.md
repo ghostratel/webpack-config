@@ -12,6 +12,7 @@ A webpack4 workflow.
 * 支持Vue.js 2.x开发。
 * 支持React.js开发。
 * 支持多页应用开发。
+* bundle 分析。
 * Sass 编译。
 * Autoprefixer 浏览器厂商后缀自动补全。
 * 小图片转base64。
@@ -26,6 +27,7 @@ A webpack4 workflow.
 * Support Vue.js 2.x development。
 * Support React.js development。
 * Support for multi-page application development。
+* Bundle analyse.
 * Sass compilation。
 * Autoprefixer browser vendor suffix auto completion。
 * Small picture to base64.
