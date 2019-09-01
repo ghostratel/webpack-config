@@ -6,6 +6,7 @@ const TerserJSPlugin = require('terser-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 
 module.exports = env => {
 
@@ -49,6 +50,7 @@ module.exports = env => {
       ]
     },
     plugins: [
+      new ProgressBarPlugin(),
       new MiniCssExtractPlugin({
         filename: 'css/[name]_[contenthash:5].css',
         chunkFilename: 'css/[id]_[contenthash:5].css'
