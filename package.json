@@ -16,15 +16,15 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/ghostratel/webpack-seed.git"
+		"url": "git+https://github.com/wicked-knife/webpack-seed.git"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/ghostratel/webpack-seed/issues"
+		"url": "https://github.com/wicked-knife/webpack-seed/issues"
 	},
-	"homepage": "https://github.com/ghostratel/webpack-seed#readme",
+	"homepage": "https://github.com/wicked-knife/webpack-seed#readme",
 	"dependencies": {
 		"@babel/polyfill": "^7.4.4",
 		"react": "^16.8.6",
