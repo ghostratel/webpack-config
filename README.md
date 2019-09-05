@@ -6,6 +6,10 @@ Webpack4 based front-end workflow, out of the box.
 
 The branch `react` is designed for react development.
 
+##
+
+The branch `vue` is designed for vue development.
+
 ## 功能
 
 * Webpack 4.x 的 JS 模块编译，支持各类模块规范。
