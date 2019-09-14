@@ -8,7 +8,7 @@ module.exports = {
     chunkFilename: 'js/[name]_[contenthash:5].js'
   },
   resolve: {
-    extensions: ['.js', '.vue', '.jsx'],
+    extensions: ['.js', '.vue', '.jsx', '.ts', '.tsx'],
     alias: {
       '@': path.resolve(__dirname, 'src')
     }
@@ -31,6 +31,14 @@ module.exports = {
               fix: true
             }
           }
+        ]
+      },
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: [
+          'babel-loader',
+          'ts-loader'
         ]
       },
       {

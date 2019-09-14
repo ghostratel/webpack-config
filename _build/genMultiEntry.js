@@ -26,7 +26,7 @@ const genEntry = (entries) => {
   let entry = {}
   entries.forEach(entryName => {
     let _name = entryName.match(matchNameReg)[1]
-    const matchReg = new RegExp('^' + _name + '.js$')
+    const matchReg = new RegExp('^' + _name + '.(j|t)s$')
     const entryFile = fs.readdirSync(entryPath).find(f => matchReg.test(f))
     if(entryFile) {
       entry[_name] = path.join(entryPath, entryFile)

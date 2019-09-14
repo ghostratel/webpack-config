@@ -1,13 +1,18 @@
 import React, {Component} from 'react'
-import commonModule from '../modules/commonModule'
+import {randomNumber} from '../modules/tsModule'
 
-class C extends Component {
-  constructor(props){
+interface State {
+  counter: number
+  text: string
+}
+
+class C extends Component<any, State> {
+  constructor(props: any){
     super(props)
 
     this.state = {
       counter: 0,
-      text: commonModule
+      text: ''
     }
   }
 
@@ -26,7 +31,8 @@ class C extends Component {
   componentDidMount(){
     setInterval(() => {
       this.setState({
-        counter: this.state.counter + 1
+        counter: this.state.counter + 1,
+        text: randomNumber(0, 10) + ''
       })
     }, 1000)
   }
