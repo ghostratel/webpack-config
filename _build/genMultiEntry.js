@@ -4,7 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const pagesPath = path.resolve(__dirname, '../src/pages')
 const entryPath = path.resolve(__dirname, '../src/entries')
 const pagesFiles = fs.readdirSync(pagesPath, 'utf-8')
-const matchNameReg = /(.*)\.\w+$/
 
 const mkFile = path => {
   return fs.closeSync(fs.openSync(path, 'w'))
@@ -12,7 +11,7 @@ const mkFile = path => {
 
 const genHtmlWebpackPlugin = (files) => {
   return files.map(fileName => {
-    const chunkName = fileName.match(matchNameReg)[1]
+    const chunkName = path.basename(fileName, '.html')
     return new HtmlWebpackPlugin({
       template: path.join(pagesPath, fileName),
       filename: fileName,
@@ -25,7 +24,7 @@ const genHtmlWebpackPlugin = (files) => {
 const genEntry = (entries) => {
   let entry = {}
   entries.forEach(entryName => {
-    let _name = entryName.match(matchNameReg)[1]
+    let _name = path.basename(entryName, '.html')
     const matchReg = new RegExp('^' + _name + '.(j|t)s$')
     const entryFile = fs.readdirSync(entryPath).find(f => matchReg.test(f))
     if(entryFile) {
