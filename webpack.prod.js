@@ -19,28 +19,13 @@ module.exports = env => {
     module: {
       rules: [
         {
-          test: /(?<!\.module)\.(scss|css)$/,
+          test: /\.s?css$/,
           use: [
             MiniCssExtractPlugin.loader,
             {
               loader: 'css-loader',
               options: {
                 importLoaders: 2
-              }
-            },
-            'sass-loader',
-            'postcss-loader'
-          ]
-        },
-        {
-          test: /(?<=\.module)\.(scss|css)$/,
-          use: [
-            MiniCssExtractPlugin.loader,
-            {
-              loader: 'css-loader',
-              options: {
-                importLoaders: 2,
-                modules: true
               }
             },
             'sass-loader',

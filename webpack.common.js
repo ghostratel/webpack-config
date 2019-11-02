@@ -1,6 +1,5 @@
 
 const { HTMLWebpackPlugins, entry } = require('./.build/genEntries.js')
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const path = require('path')
 module.exports = {
   entry: entry,
@@ -8,7 +7,7 @@ module.exports = {
     chunkFilename: 'js/[name]_[contenthash:5].js'
   },
   resolve: {
-    extensions: ['.js', '.vue', '.jsx', '.ts', '.tsx'],
+    extensions: ['.js', '.ts'],
     alias: {
       '@': path.resolve(__dirname, 'src')
     }
@@ -40,10 +39,6 @@ module.exports = {
           'babel-loader',
           'ts-loader'
         ]
-      },
-      {
-        test: /\.vue$/,
-        loader: 'vue-loader'
       },
       {
         test: /\.html$/,
@@ -78,7 +73,6 @@ module.exports = {
     ]
   },
   plugins: [
-    ...HTMLWebpackPlugins,
-    new VueLoaderPlugin()
+    ...HTMLWebpackPlugins
   ]
 }

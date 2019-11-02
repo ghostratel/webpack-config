@@ -5,28 +5,20 @@ module.exports = {
         'node': true
     },
     'extends': [
-        'eslint:recommended',
-        'plugin:vue/essential',
-        "plugin:react/recommended"
+        'eslint:recommended'
     ],
     'globals': {
         'Atomics': 'readonly',
         'SharedArrayBuffer': 'readonly',
         'DEV': true
     },
-    'parserOptions': {
-        'parser': 'babel-eslint',
-        'ecmaVersion': 2018,
-        'sourceType': 'module'
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "sourceType": "module",
+      "allowImportExportEverywhere": true
     },
     'settings': {
-        "react": {
-            "version": "detect"
-        }
     },
-    'plugins': [
-        'vue'
-    ],
     'rules': {
         'indent': [
             'error',
