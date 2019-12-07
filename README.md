@@ -22,7 +22,7 @@ The branch `vue` is designed for vue development.
 * 支持多页应用开发。
 * bundle 分析。
 * Sass 编译。
-* Autoprefixer 浏览器厂商后缀自动补全。
+* Autoprefixer CSS3兼容属性自动补全。
 * 小图片转base64。
 
 ## Feature
@@ -37,5 +37,5 @@ The branch `vue` is designed for vue development.
 * Support for multi-page application development。
 * Bundle analyse.
 * Sass compilation。
-* Autoprefixer browser vendor suffix auto completion。
+* Autoprefixer CSS3 property auto completion。
 * Small picture to base64.
