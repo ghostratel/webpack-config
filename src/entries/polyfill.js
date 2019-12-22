@@ -1,10 +1,9 @@
 const p = new Promise((resolve, reject) => {
-  if(DEV) {
+  if (DEV) {
     resolve(true)
   } else {
-    reject(false)
+    reject(new Error('error'))
   }
 })
-
 
 console.log(p)
