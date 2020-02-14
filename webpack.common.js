@@ -50,6 +50,12 @@ module.exports = {
         }
       },
       {
+        test: /\.art$/,
+        use: {
+          loader: 'art-template-loader'
+        }
+      },
+      {
         test: /\.(svg|jpe?g|gif|png|bmp)$/,
         use: {
           loader: 'url-loader',

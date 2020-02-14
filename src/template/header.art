@@ -1,0 +1,4 @@
+<header>
+  <% include('./test.art') %>
+  <h1> hello {{name ? name : 'world'}} </h1>
+</header>
