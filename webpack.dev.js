@@ -6,7 +6,7 @@ const devConf = {
   mode: 'development',
   devtool: 'cheap-module-eval-source-map',
   output: {
-    filename: 'js/[name]_[hash:5].js',
+    filename: 'js/[name]_[hash:5].js'
   },
   devServer: {
     contentBase: 'dist',
