@@ -32,9 +32,7 @@ const devConf = {
           {
             loader: 'sass-loader',
             options: {
-              prependData: `
-                @import "@/scss/variable.scss";
-              `
+              additionalData: '@import "@/scss/variable.scss";',
             }
           }
         ]
